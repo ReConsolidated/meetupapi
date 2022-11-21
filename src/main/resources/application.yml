@@ -7,7 +7,7 @@ server:
 
 spring:
   datasource:
-    password: drzewko15
+    password: ${db_password}
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
   jpa:
