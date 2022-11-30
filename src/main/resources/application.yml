@@ -8,8 +8,8 @@ server:
 spring:
   datasource:
     password: ${db_password}
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
+    url: jdbc:postgresql://localhost:5432/meetupapi
+    username: meetupapi
   jpa:
     hibernate:
       ddl-auto: update
