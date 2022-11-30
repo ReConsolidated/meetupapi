@@ -7,7 +7,7 @@ server:
 
 spring:
   datasource:
-    password: ${db_password}
+    password: totalneOro14
     url: jdbc:postgresql://localhost:5432/meetupapi
     username: meetupapi
   jpa:
