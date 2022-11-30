@@ -3,11 +3,11 @@ server:
   error:
     include-message: always
     include-binding-errors: always
-  port: 8081
+  port: 8080
 
 spring:
   datasource:
-    password: totalneOro14
+    password: ${db_password}
     url: jdbc:postgresql://localhost:5432/meetupapi
     username: meetupapi
   jpa:
