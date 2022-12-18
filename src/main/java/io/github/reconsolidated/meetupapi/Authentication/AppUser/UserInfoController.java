@@ -1,6 +1,5 @@
 package io.github.reconsolidated.meetupapi.Authentication.AppUser;
 
-
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;

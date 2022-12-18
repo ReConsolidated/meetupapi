@@ -22,7 +22,7 @@ public class RegistrationService {
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailSender emailSender;
 
-    public String register(RegistrationRequest request) {
+    public void register(RegistrationRequest request) {
         boolean isValidEmail = emailValidator.test(request.getEmail());
 
         if (!isValidEmail) {
@@ -30,7 +30,7 @@ public class RegistrationService {
         }
 
 
-        String token = appUserService.signUpUser(
+        appUserService.signUpUser(
                 new AppUser(
                         request.getFirstName(),
                         request.getLastName(),
@@ -39,11 +39,7 @@ public class RegistrationService {
                         AppUserRole.USER
                 ));
 
-        String link = "localhost:8080/registration/confirm?token=" + token;
-
-      //  emailSender.send(request.getEmail(), buildEmail(request.getFirstName(), link));
-
-        return link;
+        appUserService.enableAppUser(request.getEmail());
     }
 
 

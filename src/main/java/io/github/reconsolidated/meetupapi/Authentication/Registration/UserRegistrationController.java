@@ -1,6 +1,8 @@
 package io.github.reconsolidated.meetupapi.Authentication.Registration;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,8 +14,9 @@ public class UserRegistrationController {
 
 
     @PostMapping
-    public String register(@RequestBody RegistrationRequest request) {
-        return registrationService.register(request);
+    public ResponseEntity<?> register(@RequestBody RegistrationRequest request) {
+        registrationService.register(request);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping(path = "confirm")
