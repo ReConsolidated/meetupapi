@@ -15,4 +15,6 @@ public class AddEventDto {
     @NotNull
     private LocalDateTime date;
     private long durationInSeconds;
+    private double latitude;
+    private double longitude;
 }

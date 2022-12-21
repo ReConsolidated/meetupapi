@@ -8,7 +8,6 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -22,4 +21,6 @@ public class Event {
     private Long ownerId;
     private LocalDateTime dateTime;
     private long durationInSeconds;
+    private double latitude;
+    private double longitude;
 }
