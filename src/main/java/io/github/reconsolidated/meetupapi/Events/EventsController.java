@@ -21,6 +21,12 @@ public class EventsController {
         return ResponseEntity.ok(eventsService.createEvent(currentUser, eventDto));
     }
 
+    @PostMapping("/add_participant")
+    public ResponseEntity<?> addParticipant(@CurrentUser AppUser currentUser, @RequestParam Long eventId, @RequestParam Long userId) {
+        eventsService.addParticipant(eventId, userId);
+        return ResponseEntity.ok().build();
+    }
+
     @GetMapping("/get_nearby_events")
     public ResponseEntity<?> getNearbyEvents(
             @CurrentUser AppUser currentUser,

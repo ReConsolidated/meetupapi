@@ -28,7 +28,7 @@ public class FriendsController {
                 .collect(Collectors.toList()));
     }
 
-    @PostMapping
+    @PostMapping("/add_friend")
     public ResponseEntity<?> addFriend(@CurrentUser AppUser user, @RequestParam Long friendId) {
         if (friendsService.areFriends(user.getId(), friendId)) {
             throw new IllegalArgumentException("These users are already friends: %d, %d".formatted(user.getId(), friendId));
