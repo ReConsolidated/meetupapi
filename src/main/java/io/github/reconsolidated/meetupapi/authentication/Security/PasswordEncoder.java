@@ -1,4 +1,4 @@
-package io.github.reconsolidated.meetupapi.Authentication.Security;
+package io.github.reconsolidated.meetupapi.authentication.Security;
 
 
 import org.springframework.context.annotation.Bean;

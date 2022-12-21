@@ -1,4 +1,4 @@
-package io.github.reconsolidated.meetupapi.Authentication.AppUser;
+package io.github.reconsolidated.meetupapi.authentication.AppUser;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package io.github.reconsolidated.meetupapi.Authentication.Registration;
+package io.github.reconsolidated.meetupapi.authentication.Registration;
 
 import org.springframework.stereotype.Service;
 

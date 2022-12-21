@@ -1,6 +1,6 @@
-package io.github.reconsolidated.meetupapi.Authentication.Registration.token;
+package io.github.reconsolidated.meetupapi.authentication.Registration.token;
 
-import io.github.reconsolidated.meetupapi.Authentication.AppUser.AppUser;
+import io.github.reconsolidated.meetupapi.authentication.AppUser.AppUser;
 import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

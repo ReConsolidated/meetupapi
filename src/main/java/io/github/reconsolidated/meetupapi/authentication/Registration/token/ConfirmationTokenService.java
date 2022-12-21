@@ -1,4 +1,4 @@
-package io.github.reconsolidated.meetupapi.Authentication.Registration.token;
+package io.github.reconsolidated.meetupapi.authentication.Registration.token;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

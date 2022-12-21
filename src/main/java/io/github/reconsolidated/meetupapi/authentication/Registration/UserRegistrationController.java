@@ -1,7 +1,6 @@
-package io.github.reconsolidated.meetupapi.Authentication.Registration;
+package io.github.reconsolidated.meetupapi.authentication.Registration;
 
 import lombok.AllArgsConstructor;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

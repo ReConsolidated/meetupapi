@@ -1,4 +1,4 @@
-package io.github.reconsolidated.meetupapi.Authentication.AppUser;
+package io.github.reconsolidated.meetupapi.authentication.AppUser;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

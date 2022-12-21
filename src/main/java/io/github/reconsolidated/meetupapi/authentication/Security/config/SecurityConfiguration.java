@@ -1,6 +1,6 @@
-package io.github.reconsolidated.meetupapi.Authentication.Security.config;
+package io.github.reconsolidated.meetupapi.authentication.Security.config;
 
-import io.github.reconsolidated.meetupapi.Authentication.AppUser.AppUserService;
+import io.github.reconsolidated.meetupapi.authentication.AppUser.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

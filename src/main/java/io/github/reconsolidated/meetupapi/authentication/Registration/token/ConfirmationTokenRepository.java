@@ -1,4 +1,4 @@
-package io.github.reconsolidated.meetupapi.Authentication.Registration.token;
+package io.github.reconsolidated.meetupapi.authentication.Registration.token;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

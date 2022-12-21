@@ -1,12 +1,12 @@
-package io.github.reconsolidated.meetupapi.Authentication.Registration;
+package io.github.reconsolidated.meetupapi.authentication.Registration;
 
 
-import io.github.reconsolidated.meetupapi.Authentication.AppUser.AppUser;
-import io.github.reconsolidated.meetupapi.Authentication.AppUser.AppUserRole;
-import io.github.reconsolidated.meetupapi.Authentication.AppUser.AppUserService;
-import io.github.reconsolidated.meetupapi.Authentication.Email.EmailSender;
-import io.github.reconsolidated.meetupapi.Authentication.Registration.token.ConfirmationToken;
-import io.github.reconsolidated.meetupapi.Authentication.Registration.token.ConfirmationTokenService;
+import io.github.reconsolidated.meetupapi.authentication.AppUser.AppUser;
+import io.github.reconsolidated.meetupapi.authentication.AppUser.AppUserRole;
+import io.github.reconsolidated.meetupapi.authentication.AppUser.AppUserService;
+import io.github.reconsolidated.meetupapi.authentication.Email.EmailSender;
+import io.github.reconsolidated.meetupapi.authentication.Registration.token.ConfirmationToken;
+import io.github.reconsolidated.meetupapi.authentication.Registration.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

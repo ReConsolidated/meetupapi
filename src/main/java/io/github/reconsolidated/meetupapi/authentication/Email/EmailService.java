@@ -1,4 +1,4 @@
-package io.github.reconsolidated.meetupapi.Authentication.Email;
+package io.github.reconsolidated.meetupapi.authentication.Email;
 
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;

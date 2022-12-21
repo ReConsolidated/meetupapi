@@ -1,7 +1,7 @@
-package io.github.reconsolidated.meetupapi.Authentication.AppUser;
+package io.github.reconsolidated.meetupapi.authentication.AppUser;
 
-import io.github.reconsolidated.meetupapi.Authentication.Registration.token.ConfirmationToken;
-import io.github.reconsolidated.meetupapi.Authentication.Registration.token.ConfirmationTokenService;
+import io.github.reconsolidated.meetupapi.authentication.Registration.token.ConfirmationToken;
+import io.github.reconsolidated.meetupapi.authentication.Registration.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
