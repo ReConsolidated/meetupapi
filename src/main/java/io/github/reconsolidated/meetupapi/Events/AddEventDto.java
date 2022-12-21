@@ -13,8 +13,6 @@ public class AddEventDto {
     @NotNull
     private String name;
     @NotNull
-    private Long ownerId;
-    @NotNull
     private LocalDateTime date;
     private long durationInSeconds;
 }
