@@ -9,9 +9,9 @@ server:
 
 spring:
   datasource:
-    password: ${db_password}
-    url: jdbc:postgresql://localhost:5432/meetupapi
-    username: meetupapi
+    password: ${SPRING_DATASOURCE_PASSWORD:password}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/meetupapi}
+    username: ${SPRING_DATASOURCE_USERNAME:meetupapi}
   jpa:
     hibernate:
       ddl-auto: update

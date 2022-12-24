@@ -18,6 +18,5 @@ public class Friends {
     @Id
     private Long id;
     @ManyToMany
-    @JoinColumn(name = "friends")
-    private List<AppUser> friends = new ArrayList<>();
+    private List<AppUser> friendList = new ArrayList<>();
 }
