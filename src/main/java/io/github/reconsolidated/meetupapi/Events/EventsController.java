@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Validated
 @RestController
@@ -24,6 +25,12 @@ public class EventsController {
     @PostMapping("/add_participant")
     public ResponseEntity<?> addParticipant(@CurrentUser AppUser currentUser, @RequestParam Long eventId, @RequestParam Long userId) {
         eventsService.addParticipant(eventId, userId);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/add_participants")
+    public ResponseEntity<?> addParticipants(@CurrentUser AppUser currentUser, @RequestParam Long eventId, @RequestBody List<Long> userIds) {
+        eventsService.addParticipants(eventId, userIds);
         return ResponseEntity.ok().build();
     }
 

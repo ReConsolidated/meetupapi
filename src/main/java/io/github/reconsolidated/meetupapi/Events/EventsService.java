@@ -33,4 +33,11 @@ public class EventsService {
         event.getParticipants().add(appUserService.getById(userId).orElseThrow());
         eventsRepository.save(event);
     }
+
+    public void addParticipants(Long eventId, List<Long> userIds) {
+        Event event = eventsRepository.findById(eventId).orElseThrow();
+        List<AppUser> users = userIds.stream().map(id -> appUserService.getById(id).orElseThrow()).toList();
+        event.getParticipants().addAll(users);
+        eventsRepository.save(event);
+    }
 }
