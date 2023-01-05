@@ -16,9 +16,9 @@ public class FriendsService {
     private final AppUserService appUserService;
 
     public void addFriend(Long friend1, Long friend2) {
-        Friends friends = friendsRepository.findById(friend1).orElse(new Friends());
+        Friends friends = friendsRepository.findById(friend1).orElse(new Friends(friend1));
         friends.getFriendList().add(appUserService.getById(friend1).orElseThrow());
-        Friends friends2 = friendsRepository.findById(friend2).orElse(new Friends());
+        Friends friends2 = friendsRepository.findById(friend2).orElse(new Friends(friend2));
         friends2.getFriendList().add(appUserService.getById(friend1).orElseThrow());
         friendsRepository.save(friends);
         friendsRepository.save(friends2);
