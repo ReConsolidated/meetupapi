@@ -19,4 +19,8 @@ public class Friends {
     private Long id;
     @ManyToMany
     private List<AppUser> friendList = new ArrayList<>();
+
+    public Friends(Long id) {
+        this.id = id;
+    }
 }

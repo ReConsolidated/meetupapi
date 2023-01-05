@@ -33,8 +33,8 @@ public class FriendsService {
     }
 
     public boolean areFriends(Long friend1, Long friend2) {
-        Friends friends1 = friendsRepository.findById(friend1).orElse(new Friends());
-        Friends friends2 = friendsRepository.findById(friend2).orElse(new Friends());
+        Friends friends1 = friendsRepository.findById(friend1).orElse(new Friends(friend1));
+        Friends friends2 = friendsRepository.findById(friend2).orElse(new Friends(friend2));
         return friends1.getFriendList().stream().anyMatch(friend -> friend.getId().equals(friend2))
                 || friends2.getFriendList().stream().anyMatch(friend -> friend.getId().equals(friend1));
     }
