@@ -1,20 +1,18 @@
 package io.github.reconsolidated.meetupapi.authentication.Registration;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 @AllArgsConstructor
 @Getter
 @EqualsAndHashCode
 @ToString
-
+@NoArgsConstructor
+@Setter
 public class RegistrationRequest {
-    private final String firstName;
-    private final String lastName;
-    private final String password;
-    private final String email;
+    private String firstName;
+    private String lastName;
+    private String password;
+    private String email;
 
 
 }
