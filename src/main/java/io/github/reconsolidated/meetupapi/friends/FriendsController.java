@@ -1,6 +1,7 @@
 package io.github.reconsolidated.meetupapi.friends;
 
 import io.github.reconsolidated.meetupapi.authentication.AppUser.AppUser;
+import io.github.reconsolidated.meetupapi.authentication.AppUser.AppUserService;
 import io.github.reconsolidated.meetupapi.authentication.currentUser.CurrentUser;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Validated
@@ -18,6 +20,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class FriendsController {
     private final FriendsService friendsService;
+    private final AppUserService appUserService;
 
     @GetMapping("/get_friends")
     public ResponseEntity<List<OtherUserDto>> getFriends(@CurrentUser AppUser user) {
@@ -29,11 +32,15 @@ public class FriendsController {
     }
 
     @PostMapping("/add_friend")
-    public ResponseEntity<?> addFriend(@CurrentUser AppUser user, @RequestParam Long friendId) {
-        if (friendsService.areFriends(user.getId(), friendId)) {
-            throw new IllegalArgumentException("These users are already friends: %d, %d".formatted(user.getId(), friendId));
+    public ResponseEntity<?> addFriend(@CurrentUser AppUser user, @RequestParam String friendEmail) {
+        Optional<AppUser> friend = appUserService.getByEmail(friendEmail);
+        if (friend.isEmpty()) {
+            return ResponseEntity.notFound().build();
         }
-        friendsService.addFriend(user.getId(), friendId);
+        if (friendsService.areFriends(user.getId(), friend.get().getId())) {
+            throw new IllegalArgumentException("These users are already friends: %d, %d".formatted(user.getId(), friend.get().getId()));
+        }
+        friendsService.addFriend(user.getId(), friend.get().getId());
         return ResponseEntity.ok().build();
     }
 }

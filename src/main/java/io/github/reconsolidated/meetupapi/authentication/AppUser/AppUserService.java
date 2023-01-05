@@ -67,4 +67,8 @@ public class AppUserService implements UserDetailsService {
         appUser.setEnabled(true);
         appUserRepository.save(appUser);
     }
+
+    public Optional<AppUser> getByEmail(String friendEmail) {
+        return appUserRepository.findByEmail(friendEmail);
+    }
 }
