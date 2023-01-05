@@ -31,6 +31,15 @@ public class FriendsController {
                 .collect(Collectors.toList()));
     }
 
+    @GetMapping("/get_other_friends")
+    public ResponseEntity<List<OtherUserDto>> getOtherUserFriends(@RequestParam Long id) {
+        return ResponseEntity.ok(friendsService.getFriends(
+                        id).stream()
+                .map(
+                        friend -> new OtherUserDto(friend.getId(), friend.getFirstName(), friend.getLastName(), friend.getEmail()))
+                .collect(Collectors.toList()));
+    }
+
     @PostMapping("/add_friend")
     public ResponseEntity<?> addFriend(@CurrentUser AppUser user, @RequestParam String friendEmail) {
         friendEmail = friendEmail.replace("%40", "@");
