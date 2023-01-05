@@ -33,6 +33,7 @@ public class FriendsController {
 
     @PostMapping("/add_friend")
     public ResponseEntity<?> addFriend(@CurrentUser AppUser user, @RequestParam String friendEmail) {
+        friendEmail = friendEmail.replace("%40", "@");
         Optional<AppUser> friend = appUserService.getByEmail(friendEmail);
         if (friend.isEmpty()) {
             return ResponseEntity.notFound().build();
