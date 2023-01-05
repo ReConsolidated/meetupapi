@@ -14,7 +14,6 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class Friends {
-    @GeneratedValue
     @Id
     private Long id;
     @ManyToMany
