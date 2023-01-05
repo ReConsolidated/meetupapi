@@ -11,4 +11,6 @@ public class OtherUserDto {
     private Long id;
     private String firstName;
     private String surname;
+
+    private String emailAddress;
 }

@@ -27,7 +27,7 @@ public class FriendsController {
         return ResponseEntity.ok(friendsService.getFriends(
                 user.getId()).stream()
                 .map(
-                friend -> new OtherUserDto(friend.getId(), friend.getFirstName(), friend.getLastName()))
+                friend -> new OtherUserDto(friend.getId(), friend.getFirstName(), friend.getLastName(), friend.getEmail()))
                 .collect(Collectors.toList()));
     }
 
