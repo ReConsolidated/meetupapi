@@ -21,6 +21,8 @@ public class EventsService {
         event.setDurationInSeconds(eventDto.getDurationInSeconds());
         event.setLatitude(eventDto.getLatitude());
         event.setLongitude(eventDto.getLongitude());
+        event.setDescription(eventDto.getDescription());
+        event.setColor(eventDto.getColor());
         return eventsRepository.save(event).getId();
     }
 

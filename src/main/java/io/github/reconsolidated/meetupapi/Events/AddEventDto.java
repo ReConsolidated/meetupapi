@@ -17,4 +17,6 @@ public class AddEventDto {
     private long durationInSeconds;
     private double latitude;
     private double longitude;
+    private String description;
+    private String color;
 }

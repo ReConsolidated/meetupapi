@@ -28,6 +28,7 @@ public class Event {
     private long durationInSeconds;
     private double latitude;
     private double longitude;
+    private String description;
     private String color;
     @ManyToMany
     @JoinColumn(name = "events_participants")
