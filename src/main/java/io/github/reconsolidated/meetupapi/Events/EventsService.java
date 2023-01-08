@@ -43,4 +43,8 @@ public class EventsService {
         event.getParticipants().addAll(users);
         eventsRepository.save(event);
     }
+
+    public void deleteAllEvents() {
+        eventsRepository.deleteAll();
+    }
 }

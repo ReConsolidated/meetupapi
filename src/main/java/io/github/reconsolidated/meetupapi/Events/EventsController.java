@@ -42,6 +42,12 @@ public class EventsController {
         return ResponseEntity.ok(eventsService.getNearbyEvents(currentUser, latitude, longitude));
     }
 
+    @DeleteMapping("/delete_all_events")
+    public ResponseEntity<?> deleteAllEvents(@CurrentUser AppUser currentUser) {
+        eventsService.deleteAllEvents();
+        return ResponseEntity.ok().build();
+    }
+
 
 
 }
