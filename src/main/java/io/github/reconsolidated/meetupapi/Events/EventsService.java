@@ -5,6 +5,7 @@ import io.github.reconsolidated.meetupapi.authentication.AppUser.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -27,7 +28,7 @@ public class EventsService {
     }
 
     public List<Event> getNearbyEvents(AppUser currentUser, double latitude, double longitude) {
-        return eventsRepository.findAll();
+        return eventsRepository.findByDateTimeIsAfter(LocalDateTime.now().minusHours(1));
     }
 
     public void addParticipant(Long eventId, Long userId) {
