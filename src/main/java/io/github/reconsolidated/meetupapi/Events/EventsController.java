@@ -18,7 +18,7 @@ public class EventsController {
     private final EventsService eventsService;
 
     @PostMapping("/create_event")
-    public ResponseEntity<?> addEvent(@CurrentUser AppUser currentUser, @RequestBody @Valid AddEventDto eventDto) {
+    public ResponseEntity<Long> addEvent(@CurrentUser AppUser currentUser, @RequestBody @Valid AddEventDto eventDto) {
         return ResponseEntity.ok(eventsService.createEvent(currentUser, eventDto));
     }
 
@@ -35,7 +35,7 @@ public class EventsController {
     }
 
     @GetMapping("/get_nearby_events")
-    public ResponseEntity<?> getNearbyEvents(
+    public ResponseEntity<List<Event>> getNearbyEvents(
             @CurrentUser AppUser currentUser,
             @RequestParam double latitude,
             @RequestParam double longitude) {
