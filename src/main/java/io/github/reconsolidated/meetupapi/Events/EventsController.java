@@ -43,9 +43,9 @@ public class EventsController {
             @RequestParam double latitude,
             @RequestParam double longitude) {
         List<Event> events = eventsService.getNearbyEvents(currentUser, latitude, longitude);
-        SimpleDateFormat format = new SimpleDateFormat("MM-dd-yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         events.forEach((e) -> {
-            e.setDate(format.format(e.getDateTime()));
+            e.setDate(e.getDateTime().format(formatter));
         });
         return ResponseEntity.ok(events);
     }
