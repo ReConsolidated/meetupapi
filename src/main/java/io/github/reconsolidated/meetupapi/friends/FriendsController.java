@@ -47,6 +47,9 @@ public class FriendsController {
         if (friend.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
+        if (user.getEmail().equalsIgnoreCase(friendEmail)) {
+            throw new IllegalArgumentException("Can't add yourself as a friend!");
+        }
         if (friendsService.areFriends(user.getId(), friend.get().getId())) {
             throw new IllegalArgumentException("These users are already friends: %d, %d".formatted(user.getId(), friend.get().getId()));
         }

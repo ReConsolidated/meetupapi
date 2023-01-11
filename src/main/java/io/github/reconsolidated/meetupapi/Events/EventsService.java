@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -28,7 +29,10 @@ public class EventsService {
     }
 
     public List<Event> getNearbyEvents(AppUser currentUser, double latitude, double longitude) {
-        return eventsRepository.findByDateTimeIsAfter(LocalDateTime.now().minusHours(1));
+        return eventsRepository.findByDateTimeIsAfter(LocalDateTime.now().minusHours(1)).stream().filter((event) ->{
+            return event.getParticipants().stream().anyMatch((par) -> par.getId().equals(currentUser.getId()))
+                    || event.getOwnerId().equals(currentUser.getId());
+        }).collect(Collectors.toList());
     }
 
     public void addParticipant(Long eventId, Long userId) {
