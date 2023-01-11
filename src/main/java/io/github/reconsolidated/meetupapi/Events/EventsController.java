@@ -39,7 +39,11 @@ public class EventsController {
             @CurrentUser AppUser currentUser,
             @RequestParam double latitude,
             @RequestParam double longitude) {
-        return ResponseEntity.ok(eventsService.getNearbyEvents(currentUser, latitude, longitude));
+        List<Event> events = eventsService.getNearbyEvents(currentUser, latitude, longitude);
+        events.forEach((e) -> {
+            e.setDate(e.getDateTime().toString());
+        });
+        return ResponseEntity.ok(events);
     }
 
     @DeleteMapping("/delete_all_events")

@@ -22,6 +22,7 @@ public class Event {
     private String name;
     private Long ownerId;
     private LocalDateTime dateTime;
+    private String date;
     private long durationInSeconds;
     private double latitude;
     private double longitude;
