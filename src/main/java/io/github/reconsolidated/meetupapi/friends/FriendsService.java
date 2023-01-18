@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -16,6 +17,9 @@ public class FriendsService {
     private final AppUserService appUserService;
 
     public void addFriend(Long friend1, Long friend2) {
+        if(Objects.equals(friend1, friend2)) {
+            throw new IllegalStateException("Cannot add yourself as a friend!");
+        }
         Friends friends = friendsRepository.findById(friend1).orElse(new Friends(friend1));
         friends.getFriendList().add(appUserService.getById(friend2).orElseThrow());
         Friends friends2 = friendsRepository.findById(friend2).orElse(new Friends(friend2));

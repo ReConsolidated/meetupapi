@@ -16,7 +16,7 @@ import java.util.List;
 public class Friends {
     @Id
     private Long id;
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     private List<AppUser> friendList = new ArrayList<>();
 
     public Friends(Long id) {

@@ -28,7 +28,7 @@ public class Event {
     private double longitude;
     private String description;
     private String color;
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinColumn(name = "events_participants")
     private List<AppUser> participants = new ArrayList<>();
 }
